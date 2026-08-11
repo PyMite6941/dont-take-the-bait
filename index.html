@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>and.... BOOM — you could have been phished</title>
+<meta name="description" content="A plain-English guide to spotting phishing emails, scam texts and fraud phone calls. Real examples you can pull apart, a test, and what to do if you already clicked.">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="and.... BOOM — you could have been phished">
+<meta property="og:description" content="It takes one click. Here is how to make sure it is never yours.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎣</text></svg>">
+<noscript><style>
+  /* Without JavaScript the terminal cannot play, so skip straight to the point
+     and hide the widgets that need scripting. The guide itself still reads fine. */
+  #terminal, #quiz, #examples .tablist, #readout { display: none !important; }
+  #hero-reveal { display: block !important; }
+  [role="tabpanel"] { display: block !important; margin-bottom: 2rem; }
+  .flag-btn { cursor: default; }
+</style></noscript>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to the main content</a>
+
+<header class="topbar no-print">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="dot" aria-hidden="true"></span>baitline.awareness</a>
+    <nav aria-label="Sections of this guide">
+      <a href="#what">01_what</a>
+      <a href="#signs">02_signs</a>
+      <a href="#examples">03_teardown</a>
+      <a href="#quiz">04_test</a>
+      <a href="#clicked">05_incident</a>
+      <a href="guide.html">print_checklist</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+
+    <!-- The theatrical bit. It is a simulation and the page says so instantly. -->
+    <div class="terminal" id="terminal">
+      <div class="terminal-bar" aria-hidden="true">
+        <i></i><i></i><i></i>
+        <span>attacker@remote — simulated_session</span>
+      </div>
+      <div class="terminal-body" id="terminal-body" role="img"
+           aria-label="A dramatised terminal animation of a phishing attack running. It is fake — the full explanation follows below.">
+      </div>
+    </div>
+
+    <div class="hero-reveal hidden" id="hero-reveal">
+      <h1 class="boom">and.... BOOM</h1>
+      <p class="boom-sub">you could have been phished</p>
+
+      <p class="lede">
+        <strong>Relax — nothing happened.</strong> Nothing was taken, nothing was
+        installed, and this page collects nothing about you. That was a dramatisation of
+        something that happens to about a million people a day, and it almost always
+        starts the same boring way: one message, one link, one click.
+      </p>
+      <p class="lede">
+        You do not need to understand computers to stop it. Scams follow a handful of
+        patterns, and once you have seen the patterns you cannot un-see them.
+        <strong>This page takes about fifteen minutes.</strong>
+      </p>
+
+      <div class="btn-row">
+        <a class="btn" href="#signs">Show me the warning signs</a>
+        <a class="btn btn-danger" href="#clicked">I already clicked something</a>
+      </div>
+
+      <div class="hero-stat">
+        <div>
+          <strong>~90%</strong>
+          <span>of successful attacks on organisations start with a message like this</span>
+        </div>
+        <div>
+          <strong>1 click</strong>
+          <span>is the entire attack. There is no second, cleverer step</span>
+        </div>
+        <div>
+          <strong>Anyone</strong>
+          <span>gets caught. Engineers, accountants and police officers all do</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ==================================================================== -->
+<section id="what">
+  <div class="wrap">
+    <span class="eyebrow">Section 01 — what you are up against</span>
+    <h2>What "phishing" actually is</h2>
+
+    <p>
+      Phishing (said like "fishing") is a stranger sending you a message while pretending
+      to be someone you trust — your bank, a delivery company, your workplace, even a
+      family member — so that you hand over something valuable.
+    </p>
+
+    <p><strong>Put it in the physical world.</strong> Someone knocks on your door in a
+      convincing uniform and says there is a gas leak and they must come in
+      <em>right now</em>. The uniform is fake. The urgency is fake. But in the moment,
+      you open the door.</p>
+
+    <p>A phishing message is that same trick delivered to your phone. The "uniform" is a
+      familiar logo and a sender name that looks right.</p>
+
+    <h3 style="margin-top:2.75rem">What they are actually after</h3>
+    <div class="grid">
+      <div class="card" data-id="TGT_01">
+        <h3><span class="icon" aria-hidden="true">🔑</span> Your password</h3>
+        <p>They send you to a fake copy of a real login page. You type your password, and
+          it goes to them instead of the company.</p>
+      </div>
+      <div class="card" data-id="TGT_02">
+        <h3><span class="icon" aria-hidden="true">💳</span> Your money</h3>
+        <p>A fake invoice, a fake customs fee, a refund that needs your card details
+          first. Usually a small, believable amount.</p>
+      </div>
+      <div class="card" data-id="TGT_03">
+        <h3><span class="icon" aria-hidden="true">📱</span> Your security code</h3>
+        <p>The six digits your bank texts you. Handing that over is handing over the key.
+          <strong>No real company will ever ask you for it.</strong></p>
+      </div>
+      <div class="card" data-id="TGT_04">
+        <h3><span class="icon" aria-hidden="true">💻</span> Control of your device</h3>
+        <p>They talk you into installing a program so they can "fix" a problem. Now they
+          see your screen and everything you type.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2.75rem">The four ways it reaches you</h3>
+    <div class="grid">
+      <div class="card" data-id="VEC_01">
+        <h3><span class="icon" aria-hidden="true">✉️</span> Email</h3>
+        <p>The classic. A fake alert, receipt, or password reset.</p>
+      </div>
+      <div class="card" data-id="VEC_02">
+        <h3><span class="icon" aria-hidden="true">💬</span> Text message</h3>
+        <p>Missed deliveries, unpaid tolls, "Hi Mum, this is my new number."</p>
+      </div>
+      <div class="card" data-id="VEC_03">
+        <h3><span class="icon" aria-hidden="true">📞</span> Phone call</h3>
+        <p>Someone claiming to be your bank's fraud team, or technical support.</p>
+      </div>
+      <div class="card" data-id="VEC_04">
+        <h3><span class="icon" aria-hidden="true">🔲</span> QR codes</h3>
+        <p>A sticker stuck over the real code on a parking meter or a restaurant table.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================== -->
+<section id="signs">
+  <div class="wrap">
+    <span class="eyebrow">Section 02 — detection</span>
+    <h2>The five warning signs</h2>
+    <p class="lede">
+      Nearly every scam message carries at least two of these. Spot two, and stop —
+      you are almost certainly looking at a fake.
+    </p>
+
+    <ol class="signs">
+      <li>
+        <div>
+          <h3>It is urgent, and there is a threat</h3>
+          <p>"Your account closes in 24 hours." "Respond immediately or face legal
+            action." Panic stops people thinking, so scammers manufacture it. Real
+            organisations give you time and are happy for you to call them back.</p>
+          <p class="quote">If a message is rushing you, that <em>is</em> the scam.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>You were not expecting it</h3>
+          <p>A parcel you did not order. A refund you did not request. An invoice from a
+            company you have never used. Unexpected, plus asking you to act, equals
+            suspicious.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>It asks for something no real company asks for</h3>
+          <p>Your full password. The six-digit code texted to your phone. Payment in gift
+            cards, crypto, or a transfer to a "safe account". Remote access to your
+            computer. <strong>Every one of those is a scam, every time, no
+            exceptions.</strong></p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>The sender's address is slightly wrong</h3>
+          <p>The name says "Apple Support" but the address is
+            <code>support@apple-account-verify.co</code>. Scammers cannot use the real
+            address, so they use one that <em>looks</em> close. Tap or hover the sender
+            name to reveal the true address.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>The link does not go where it says</h3>
+          <p>A button reading "Visit your bank" can point anywhere. On a computer, hover
+            the link without clicking and the real address appears at the bottom of the
+            screen. On a phone, press and hold it to preview.</p>
+          <p class="quote">Read an address from the left. Everything before the first single slash is the real destination.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="rule">
+      <h3>[ the one habit that beats all of this ]</h3>
+      <p><strong>Never use the contact details inside the message.</strong> If "your bank"
+        contacts you, close it and reach the bank the way you always would — the number on
+        the back of your card, the app on your phone, the address you type yourself. A
+        real message survives that check. A fake one cannot.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================== -->
+<section id="examples">
+  <div class="wrap">
+    <span class="eyebrow">Section 03 — teardown</span>
+    <h2>Take a real scam apart</h2>
+    <p class="lede">
+      Three scam messages, rebuilt safely. The orange ⚑ marks are the parts that give the
+      game away — select one and the explanation appears underneath.
+    </p>
+
+    <div class="tablist" role="tablist" aria-label="Choose an example">
+      <button role="tab" id="tab-email" aria-controls="panel-email" aria-selected="true">✉️ fake bank email</button>
+      <button role="tab" id="tab-text"  aria-controls="panel-text"  aria-selected="false">💬 fake delivery text</button>
+      <button role="tab" id="tab-call"  aria-controls="panel-call"  aria-selected="false">📞 fake support call</button>
+    </div>
+
+    <p class="fake-note"><span aria-hidden="true">⚠</span> SIMULATED — every example below
+      is a harmless recreation. The companies are invented. Nothing here is clickable.</p>
+
+    <!-- ---------- EMAIL ---------- -->
+    <div id="panel-email" role="tabpanel" aria-labelledby="tab-email" tabindex="0">
+      <div class="mock">
+        <div class="mock-head">
+          <div class="row">
+            <span class="label">From</span>
+            <span>NorthPoint Bank Security
+              <button class="flag-btn" data-title="The address is not really the bank"
+                data-explain="The name shown is 'NorthPoint Bank Security', but the actual address is northpoint-bank-alerts.com — not the bank's real website. Anyone can put any name they like in the From field; only the part after the @ symbol means anything, and even that can be faked. Treat the sender name as decoration, never as proof.">&lt;security@northpoint-bank-alerts.com&gt;</button>
+            </span>
+          </div>
+          <div class="row">
+            <span class="label">To</span>
+            <span><button class="flag-btn" data-title="It does not know who you are"
+              data-explain="Your bank knows your name and your account number. A message sent to 'undisclosed recipients' went to thousands of people at once, hoping a few of them happen to bank there. You were not chosen — you were included.">undisclosed-recipients</button></span>
+          </div>
+          <div class="row">
+            <span class="label">Subject</span>
+            <span><strong><button class="flag-btn" data-title="Manufactured panic"
+              data-explain="A deadline in the subject line is the most common trick there is. It exists to stop you thinking. Real banks freeze a suspicious transaction and then wait for you — they do not give you 24 hours to save your own account.">URGENT: Account suspension in 24 hours</button></strong></span>
+          </div>
+        </div>
+        <div class="mock-body">
+          <p><button class="flag-btn" data-title="A greeting with no name in it"
+            data-explain="'Dear Valued Customer' means the sender does not know your name, because they never had it. Your real bank uses your name. Careful though — some scammers do know your name from a data breach, so a correct name does not prove a message is genuine.">Dear Valued Customer,</button></p>
+
+          <p>We have detected unusual activity on your account originating from a device
+            we do not recognise. For your protection, access has been temporarily limited.</p>
+
+          <p><button class="flag-btn" data-title="A threat, and a demand to act now"
+            data-explain="Threat, plus deadline, plus a single link to 'fix' it. That combination is the entire shape of a phishing email. Notice the only way out they offer is their link — that is deliberate, because they must keep you away from the real bank.">You must verify your identity within 24 hours or your account will be permanently closed and remaining funds withheld.</button></p>
+
+          <p>
+            <span class="mock-btn">Verify My Account Now</span><br>
+            <span style="font-size:.9rem;color:var(--ink-dim);font-family:var(--mono)">
+              → resolves to
+              <button class="flag-btn" data-title="The link goes somewhere else entirely"
+                data-explain="Read a web address from the left and stop at the first single slash. That gives you 'secure-verify-login.info' — the site you would actually land on. The word 'northpoint' was put at the front purely to reassure you, and it means nothing at all. On a phone, press and hold a link to preview where it really goes.">northpoint.secure-verify-login.info/auth</button>
+            </span>
+          </p>
+
+          <p><button class="flag-btn" data-title="Sloppy writing"
+            data-explain="'Sincerly' is misspelled and the sign-off is vague. Big companies employ people to proofread. Mistakes like this are a useful hint — but never rely on this one alone, because plenty of scam messages are now written flawlessly.">Sincerly,<br>The NorthPoint Security Team</button></p>
+        </div>
+      </div>
+
+      <details class="raw">
+        <summary>▸ show the raw technical headers (optional — you do not need these)</summary>
+<pre><i>Return-Path:</i> &lt;bounce-8827@mail-relay-04.<b>vps-host-cheap.ru</b>&gt;
+<i>Received:</i> from mail-relay-04.<b>vps-host-cheap.ru</b> ([<b>45.147.x.x</b>])
+<i>From:</i> "NorthPoint Bank Security" &lt;security@<b>northpoint-bank-alerts.com</b>&gt;
+<i>Reply-To:</i> <b>recovery.dept.9931@gmail.com</b>
+<i>SPF:</i>   <b>fail</b>  (domain does not authorise this sender)
+<i>DKIM:</i>  <b>none</b> (message is not signed)
+<i>DMARC:</i> <b>fail</b></pre>
+        <p style="font-size:.95rem;color:var(--ink-soft);padding:0 1.1rem 1.1rem;max-width:none">
+          Plain English: the mail was sent from a rented server in another country, the
+          reply would go to a free Gmail address, and all three automatic authenticity
+          checks failed. <strong>You never have to read this.</strong> The From address and
+          the link told you the same thing in two seconds.
+        </p>
+      </details>
+
+      <p class="flag-hint">6 warning signs marked in this email.</p>
+    </div>
+
+    <!-- ---------- TEXT ---------- -->
+    <div id="panel-text" role="tabpanel" aria-labelledby="tab-text" tabindex="0" class="hidden">
+      <div class="mock mock-phone">
+        <div class="mock-head">
+          <div class="row">
+            <span class="label">From</span>
+            <span><button class="flag-btn" data-title="An ordinary mobile number"
+              data-explain="Delivery companies text from a short code or a branded sender name, not from a personal-looking mobile number. A random number you have never seen, sending you a link, is a bad sign all on its own.">+1 (838) 555-0142</button></span>
+          </div>
+        </div>
+        <div class="bubble">
+          <p><button class="flag-btn" data-title="The brand name is misspelled"
+            data-explain="'FedEX Express' with that spelling is not the real company. Scammers alter a letter or the capitalisation because they cannot use the genuine name and web address. Compare it letter by letter against a real message you have kept.">[FedEX Express]</button>
+            Your package #DH4471 could not be delivered due to an
+            <button class="flag-btn" data-title="A tiny fee is the hook"
+              data-explain="$1.99 is small enough that paying feels easier than arguing. But they do not want the $1.99 — they want your card number, expiry date and security code, to use for far larger purchases later or to sell on.">unpaid customs fee of $1.99.</button>
+            <button class="flag-btn" data-title="A deadline, again"
+              data-explain="Same trick as the email: a countdown so you act before you think. Real delivery companies leave a card, hold the parcel for days, and let you sort it out on their own website in your own time.">Reschedule within 12h or it returns to sender:</button>
+            <button class="flag-btn" data-title="An address that is not the company's"
+              data-explain="The real company's website is fedex.com. Anything else — no matter how many times the word 'fedex' appears in it — is a different website owned by somebody else. Endings like .info, .top and .icu, and long hyphenated names, are very common in scams.">fedex-redelivery-fee.info/pay</button>
+          </p>
+        </div>
+      </div>
+      <p class="flag-hint">5 warning signs marked. The biggest one is not marked at all:
+        <strong>were you expecting a parcel?</strong></p>
+    </div>
+
+    <!-- ---------- CALL ---------- -->
+    <div id="panel-call" role="tabpanel" aria-labelledby="tab-call" tabindex="0" class="hidden">
+      <div class="mock">
+        <div class="mock-head">
+          <div class="row">
+            <span class="label">Caller ID</span>
+            <span><button class="flag-btn" data-title="Caller ID can be faked"
+              data-explain="The name and number your phone displays are set by the caller. Scammers routinely make it read as your bank's real published number. Seeing the right number proves nothing whatsoever — this surprises almost everyone, and it is the single most useful fact on this page.">NorthPoint Bank — Fraud Dept</button></span>
+          </div>
+        </div>
+        <div class="mock-body">
+          <p><em>"Good afternoon, I'm calling from the fraud team at NorthPoint Bank.
+            <button class="flag-btn" data-title="They called you"
+              data-explain="This is the heart of it. When you dial the number on your card, you know who answered. When they call you, you know nothing at all. Almost every phone scam depends on the victim never making that distinction.">We've blocked two attempted payments on your card this morning.</button>"</em></p>
+
+          <p><em>"To confirm I'm speaking to the account holder,
+            <button class="flag-btn" data-title="Nobody legitimate asks for your code"
+              data-explain="The six-digit code your bank texts you exists specifically to keep other people out — including people pretending to be the bank. Your bank already knows it and never needs you to read it back. The text itself usually says 'never share this code'. If someone asks for it, the call is a scam and you can hang up right there.">could you read me the six-digit code we've just sent to your phone?</button>"</em></p>
+
+          <p><em>"Now, your account has been compromised, so
+            <button class="flag-btn" data-title="The &quot;safe account&quot; lie"
+              data-explain="There is no such thing as a safe account. No bank will ever ask you to move your own money somewhere else to protect it — that account belongs to the criminal, and once the transfer clears the money is gone. This is the most financially damaging phone scam there is.">we need to move your balance to a secure holding account while we investigate.</button>"</em></p>
+
+          <p><em>"
+            <button class="flag-btn" data-title="Isolating you from help"
+              data-explain="A genuine caller will happily wait while you check with somebody. Anyone telling you to keep the call secret, stay on the line, or not mention it to the cashier is protecting the scam, not you. 'It's a confidential investigation' is a script, not a rule.">Please don't discuss this with anyone — it's an active investigation.</button>
+            And stay on the line, don't hang up."</em></p>
+        </div>
+      </div>
+      <p class="flag-hint">5 warning signs marked. The fix never changes:
+        <strong>hang up, wait five minutes, then dial the number printed on your bank card
+        yourself.</strong></p>
+    </div>
+
+    <div class="flag-readout" id="readout" role="status" aria-live="polite">
+      <p class="placeholder">&gt; awaiting selection — choose any ⚑ mark above</p>
+      <p class="flag-progress" id="progress"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================== -->
+<section id="quiz">
+  <div class="wrap">
+    <span class="eyebrow">Section 04 — assessment</span>
+    <h2>Real or scam?</h2>
+    <p class="lede">
+      Eight messages. Some are genuine — the goal is not to distrust everything, it is to
+      know the difference. You get an explanation either way.
+    </p>
+
+    <div class="quiz" id="quiz">
+      <div id="quiz-play">
+        <div class="quiz-meta">
+          <span id="quiz-count">QUESTION 1 / 8</span>
+          <span id="quiz-score">SCORE 0</span>
+        </div>
+        <div class="quiz-bar"><span id="quiz-bar-fill"></span></div>
+
+        <div class="quiz-scenario">
+          <span class="from" id="quiz-from"></span>
+          <p id="quiz-text"></p>
+        </div>
+
+        <div class="quiz-answers" id="quiz-answers">
+          <button type="button" data-answer="scam">🚩 SCAM</button>
+          <button type="button" data-answer="real">✅ GENUINE</button>
+        </div>
+
+        <div class="quiz-feedback hidden" id="quiz-feedback">
+          <h3 id="quiz-verdict"></h3>
+          <p id="quiz-explain"></p>
+          <button class="btn" type="button" id="quiz-next">Next question →</button>
+        </div>
+      </div>
+
+      <div id="quiz-done" class="quiz-result hidden">
+        <span class="score" id="final-score">0/8</span>
+        <h3 id="final-title"></h3>
+        <p id="final-message"></p>
+        <div class="btn-row" style="justify-content:center">
+          <button class="btn btn-secondary" type="button" id="quiz-restart">Run again</button>
+          <a class="btn" href="guide.html">Get the printable checklist</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================== -->
+<section id="clicked">
+  <div class="wrap">
+    <span class="eyebrow">Section 05 — incident response</span>
+    <h2>You clicked it. Now what?</h2>
+    <p class="lede">
+      First: this happens to careful, intelligent people every day. Embarrassment makes
+      people wait, and waiting is the only thing that genuinely makes it worse. Work down
+      this list.
+    </p>
+
+    <div class="emergency">
+      <h2>[ do these in order ]</h2>
+      <ol class="steps">
+        <li>
+          <div>
+            <strong>Call your bank if money or card details were involved</strong>
+            <p>Use the number on the back of your card. Say "I think I have been scammed" —
+              banks have a team for exactly this, and acting within hours dramatically
+              improves your chances of getting money back.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Change the password you typed in</strong>
+            <p>From a different device if you can. If you used that same password anywhere
+              else, change it there too. That is the step people skip, and it is how one
+              mistake becomes five.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Turn on two-step login for that account</strong>
+            <p>It means a stolen password alone is no longer enough to get in. In settings
+              it is called "two-factor authentication", "2FA", or "two-step verification".</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>If you installed anything, or let someone control your screen</strong>
+            <p>Disconnect from the internet, uninstall the program, and run a full scan with
+              the security software already on the machine. Not confident doing that? Take
+              it to a repair shop — this is a routine, unembarrassing request for them.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Warn the people it can spread to</strong>
+            <p>Work account? Tell IT immediately — they will not be angry, they would far
+              rather know in the first hour. Personal account? Tell family, because
+              scammers use a stolen account to target the contacts inside it.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Report it</strong>
+            <p>US: <strong>reportfraud.ftc.gov</strong>. UK: <strong>Action Fraud</strong>,
+              and forward scam texts to <strong>7726</strong>. Elsewhere, search for your
+              country's national cyber security centre. Reporting is how these networks
+              get shut down.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="rule">
+      <h3>[ if you clicked but typed nothing ]</h3>
+      <p>You are very probably fine. Simply opening a link or an email rarely does damage
+        on a device that is kept up to date. The harm comes from what you <em>enter</em>
+        afterwards. Do not panic — close it, and do not go back.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================== -->
+<section id="protect">
+  <div class="wrap">
+    <span class="eyebrow">Section 06 — hardening</span>
+    <h2>Four things that protect you in advance</h2>
+    <p class="lede">Set these up once and most attacks simply stop working on you.</p>
+
+    <div class="grid">
+      <div class="card" data-id="FIX_01">
+        <h3><span class="icon" aria-hidden="true">🔐</span> Turn on two-step login</h3>
+        <p>The most valuable thirty minutes you will ever spend. Even with your password, a
+          scammer cannot get in without the second step. Do your email account first —
+          whoever controls your email can reset everything else you own.</p>
+      </div>
+      <div class="card" data-id="FIX_02">
+        <h3><span class="icon" aria-hidden="true">🗝️</span> Use a password manager</h3>
+        <p>It remembers a different password for every site, so one leak cannot unlock the
+          rest. It also quietly protects you from fake pages: it will not offer to fill in
+          your password on a lookalike site, because it checks the address exactly.</p>
+      </div>
+      <div class="card" data-id="FIX_03">
+        <h3><span class="icon" aria-hidden="true">🔄</span> Accept the updates</h3>
+        <p>Those "update available" prompts are mostly repairs to holes criminals are
+          already using. Switch on automatic updates for your phone, computer and browser,
+          then stop thinking about it.</p>
+      </div>
+      <div class="card" data-id="FIX_04">
+        <h3><span class="icon" aria-hidden="true">👨‍👩‍👧</span> Agree a family safe word</h3>
+        <p>Pick a word only your household knows. If a call or text claims to be a relative
+          in trouble and needing money now, ask for the word. It defeats "Hi Mum, this is
+          my new number" and AI voice-cloning alike.</p>
+      </div>
+    </div>
+
+    <div class="rule">
+      <h3>[ and the one that costs nothing ]</h3>
+      <p><strong>Give yourself five minutes.</strong> Scams are engineered for someone
+        reacting instantly. Almost nothing genuine is destroyed by waiting five minutes and
+        checking through a channel you chose yourself. That single pause defeats the
+        majority of what is on this page.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================== -->
+<section id="faq">
+  <div class="wrap">
+    <span class="eyebrow">Section 07 — FAQ</span>
+    <h2>Questions people actually ask</h2>
+
+    <details>
+      <summary>The email had the correct logo. Doesn't that prove it's real?</summary>
+      <p>No. A logo is a picture, and anyone can copy one off a website in seconds. Same
+        for the layout, the colours, the small print, and the unsubscribe link. Scam
+        messages are often pixel-perfect copies. Judge the sender address and the link,
+        never the artwork.</p>
+    </details>
+
+    <details>
+      <summary>It knew my name and the last four digits of my card. How?</summary>
+      <p>Almost certainly from a data breach at some company you once used — those lists
+        are bought and sold in bulk. It feels deeply personal, which is exactly why it
+        works. Personal details prove your information leaked somewhere, not that the
+        sender is genuine.</p>
+    </details>
+
+    <details>
+      <summary>My phone showed my bank's actual number when they called.</summary>
+      <p>Caller ID can be set to display any number the caller chooses, and nobody verifies
+        it. That is why the advice is always to hang up and dial back yourself. On a
+        landline, wait a minute or use a different phone first, because the original call
+        can stay connected.</p>
+    </details>
+
+    <details>
+      <summary>Isn't the padlock in the address bar a sign the site is safe?</summary>
+      <p>It only means the connection is private, not that the owner is honest. Fake sites
+        get that padlock in minutes, for free. A padlock on a scam page means your details
+        are being sent to the criminal securely.</p>
+    </details>
+
+    <details>
+      <summary>Why would anyone target me? I'm not rich or important.</summary>
+      <p>You are not being targeted personally. These go out to millions of addresses at
+        essentially zero cost, so a success rate of one in ten thousand is still
+        profitable. It is not about you — which also means being caught says nothing about
+        your intelligence.</p>
+    </details>
+
+    <details>
+      <summary>The message was written perfectly. I thought scams had bad spelling.</summary>
+      <p>That advice is out of date. Poor spelling used to be a filter the scammers
+        <em>wanted</em>, because it weeded out cautious people early. Today plenty of scam
+        messages are flawless. Good English is no reassurance at all — check the address
+        and the link instead.</p>
+    </details>
+
+    <details>
+      <summary>What if I reply just to ask whether it's real?</summary>
+      <p>Don't. A reply confirms your address or number is live and read by a real person,
+        which makes you more valuable and gets you more of them. It also starts a
+        conversation, and conversations are where scammers do their best work. Delete it,
+        then check with the company directly.</p>
+    </details>
+
+    <details>
+      <summary>Someone I know sent me a strange link. Is their account hacked?</summary>
+      <p>Very possibly, and it is worth telling them — through a different channel. Call
+        them, or message them on another app. If the account really is compromised, the
+        person replying to you in that chat may not be them.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ==================================================================== -->
+<section id="share" class="no-print">
+  <div class="wrap">
+    <span class="eyebrow">Section 08 — distribution</span>
+    <h2>Pass it on</h2>
+    <p class="lede">
+      The people most at risk are usually the least likely to find a page like this on
+      their own. The printable checklist is designed to sit on a fridge or next to a phone.
+    </p>
+    <div class="btn-row">
+      <a class="btn" href="guide.html">Open the one-page checklist</a>
+      <a class="btn btn-secondary" href="#top">Back to the top</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Don't Take the Bait</strong> — a free, plain-English guide to spotting scam
+      messages. No tracking, no accounts, no cookies, nothing collected. It is a single
+      folder of HTML.</p>
+    <p>Every example here is an invented recreation used for teaching, and the terminal
+      animation at the top is pure theatre. Company names in the examples are fictional.</p>
+    <p>General guidance, not legal or financial advice. If you have lost money, contact
+      your bank and your national fraud reporting service straight away.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

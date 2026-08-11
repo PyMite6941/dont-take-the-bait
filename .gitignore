@@ -1,0 +1,13 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*~
+
+.vscode/
+.idea/
+
+# there is no build step — nothing generated should ever land here
+node_modules/
+dist/

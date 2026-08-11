@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The one-page scam check — Don't Take the Bait</title>
+<meta name="description" content="A printable one-page checklist for spotting scam messages. Designed to go on a fridge or next to a phone.">
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎣</text></svg>">
+<style>
+  /* Guide-specific layout. Screen: a single readable column.
+     Print: two columns so the whole thing lands on one sheet of paper. */
+  .sheet { max-width: 52rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  .sheet h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); font-family: var(--mono); color: var(--ink); text-shadow: none; margin-bottom: .25em; }
+  .sheet > p.sub { font-size: 1.05rem; color: var(--ink-soft); margin-bottom: 2.25rem; }
+
+  .block {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.4rem;
+    margin-bottom: 1.1rem;
+    break-inside: avoid;
+  }
+  .block h2 {
+    font-family: var(--mono);
+    font-size: 1.05rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    margin-bottom: .85rem;
+    display: flex; align-items: center; gap: .5rem;
+  }
+  .block.stop  { border-color: rgba(74, 222, 128, .45);  background: var(--term-bg); }
+  .block.stop h2  { color: var(--term); }
+  .block.never { border-color: rgba(255, 84, 112, .45);  background: var(--red-bg); }
+  .block.never h2 { color: var(--red); }
+  .block.signs-b { border-color: rgba(251, 191, 36, .4); background: var(--amber-bg); }
+  .block.signs-b h2 { color: var(--amber); }
+  .block.after { border-color: rgba(56, 189, 248, .4);   background: var(--cyan-bg); }
+  .block.after h2 { color: var(--cyan); }
+
+  .block ul, .block ol { margin: 0; padding-left: 1.2em; max-width: none; }
+  .block li { margin-bottom: .5em; font-size: 1rem; color: var(--ink); }
+  .block li:last-child { margin-bottom: 0; }
+  .block li b { color: #fff; }
+  .block p { max-width: none; font-size: 1rem; margin-bottom: 0; }
+
+  .big-rule {
+    font-family: var(--mono);
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: var(--term);
+    margin: 0;
+  }
+
+  .cut { border: 0; border-top: 1px dashed var(--line-hot); margin: 2.5rem 0 1.5rem; }
+  .fold-note { font-family: var(--mono); font-size: .85rem; color: var(--ink-dim); text-align: center; }
+
+  @media print {
+    @page { margin: 12mm; }
+    .sheet { padding: 0; max-width: none; }
+    .sheet h1 { font-size: 17pt; margin-bottom: .15em; }
+    .sheet > p.sub { font-size: 9pt; margin-bottom: .8rem; color: #333; }
+    .columns { column-count: 2; column-gap: 8mm; }
+    .block {
+      background: #fff !important;
+      border: 1pt solid #000 !important;
+      padding: 3mm 4mm;
+      margin-bottom: 3mm;
+      border-radius: 2mm;
+    }
+    .block h2 { font-size: 9.5pt; color: #000 !important; margin-bottom: 2mm; }
+    .block li, .block p { font-size: 8.6pt; line-height: 1.32; color: #000; margin-bottom: 1.1mm; }
+    .big-rule { font-size: 9.5pt; color: #000; }
+    .cut, .fold-note { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#sheet">Skip to the checklist</a>
+
+<header class="topbar no-print">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="dot" aria-hidden="true"></span>baitline.awareness</a>
+    <nav aria-label="Navigation">
+      <a href="index.html">← back to the full guide</a>
+      <a href="#" id="print-link">🖨 print this page</a>
+    </nav>
+  </div>
+</header>
+
+<main class="sheet" id="sheet">
+
+  <h1>The one-page scam check</h1>
+  <p class="sub">
+    Print it. Put it on the fridge, or next to the phone of someone you worry about.
+    Everything that matters is on this sheet.
+  </p>
+
+  <div class="btn-row no-print" style="margin-top:0;margin-bottom:2.5rem">
+    <button class="btn" type="button" id="print-btn">🖨 Print this checklist</button>
+    <a class="btn btn-secondary" href="index.html">Read the full guide</a>
+  </div>
+
+  <div class="columns">
+
+    <div class="block stop">
+      <h2><span aria-hidden="true">✋</span> The one rule</h2>
+      <p class="big-rule">
+        Never use the phone number, link or address <em>inside</em> the message.<br><br>
+        If "your bank" contacts you, hang up or close it. Then reach them the way you
+        always do — the number on your card, the app on your phone.<br><br>
+        A real message survives that. A fake one cannot.
+      </p>
+    </div>
+
+    <div class="block signs-b">
+      <h2><span aria-hidden="true">⚑</span> Five warning signs</h2>
+      <ol>
+        <li><b>It's urgent and threatening.</b> "24 hours or your account closes." Panic is the weapon.</li>
+        <li><b>You weren't expecting it.</b> A parcel you didn't order. A refund you didn't ask for.</li>
+        <li><b>It asks for something no one legitimate asks for.</b> See the red box.</li>
+        <li><b>The sender's address is slightly off.</b> Check the bit after the @ — not the display name.</li>
+        <li><b>The link doesn't match.</b> Press and hold it on a phone, or hover on a computer, to see where it really goes.</li>
+      </ol>
+      <p style="margin-top:.7rem"><b>Spot two of these? It's a fake.</b></p>
+    </div>
+
+    <div class="block never">
+      <h2><span aria-hidden="true">⛔</span> Never, under any circumstances</h2>
+      <ul>
+        <li>Never give anyone the <b>6-digit code</b> texted to you. Not even "the bank". Especially the bank.</li>
+        <li>Never give anyone your <b>password</b>. Real IT and real banks never need it.</li>
+        <li>Never <b>move money to a "safe account"</b>. There is no such thing. It is the criminal's account.</li>
+        <li>Never pay in <b>gift cards, crypto or wire transfer</b> to someone who contacted you.</li>
+        <li>Never <b>let someone control your screen</b> because they called you about a problem.</li>
+        <li>Never <b>reply</b> to check if it's real. Replying just proves you exist.</li>
+      </ul>
+    </div>
+
+    <div class="block after">
+      <h2><span aria-hidden="true">🚑</span> If you already clicked</h2>
+      <ol>
+        <li><b>Money or card details involved?</b> Call your bank now, using the number on the card. Say "I think I've been scammed."</li>
+        <li><b>Change that password</b> — and anywhere else you used the same one.</li>
+        <li><b>Turn on two-step login</b> for that account.</li>
+        <li><b>Installed something?</b> Disconnect from the internet, uninstall it, run a full scan. Or take it to a repair shop.</li>
+        <li><b>Tell people.</b> Work account → tell IT in the first hour. Personal → warn family.</li>
+        <li><b>Report it.</b> US: reportfraud.ftc.gov · UK: Action Fraud, and forward scam texts to 7726.</li>
+      </ol>
+      <p style="margin-top:.7rem"><b>Clicked but typed nothing?</b> You're very probably fine. Close it and don't go back.</p>
+    </div>
+
+    <div class="block">
+      <h2><span aria-hidden="true">🛡</span> Set up once, protected for good</h2>
+      <ul>
+        <li><b>Two-step login</b> on your email first — whoever owns your email can reset everything else.</li>
+        <li><b>A password manager</b> — it won't fill your password into a lookalike site.</li>
+        <li><b>Automatic updates</b> on phone, computer and browser.</li>
+        <li><b>A family safe word</b> — beats "Hi Mum, this is my new number" and AI voice clones.</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h2><span aria-hidden="true">💡</span> Three things people get wrong</h2>
+      <ul>
+        <li>A <b>correct logo</b> proves nothing. Anyone can copy a picture.</li>
+        <li>The <b>padlock</b> in the address bar means the connection is private, not that the owner is honest. Scam sites have it too.</li>
+        <li><b>Caller ID can be faked.</b> Seeing your bank's real number on screen proves nothing at all.</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h2><span aria-hidden="true">⏳</span> And when in doubt</h2>
+      <p>
+        <b>Give yourself five minutes.</b> Scams are built for someone reacting instantly.
+        Almost nothing genuine is destroyed by waiting five minutes and checking through a
+        channel you chose yourself. That single pause defeats most of this.
+      </p>
+      <p style="margin-top:.6rem;color:var(--ink-soft)">
+        Being caught says nothing about your intelligence. It says someone did this a
+        million times and caught you on a bad day.
+      </p>
+    </div>
+
+  </div>
+
+  <hr class="cut no-print">
+  <p class="fold-note no-print">
+    Full guide, examples and a test: <a href="index.html">index page</a> ·
+    Free to copy, print and hand out. No tracking, no cookies.
+  </p>
+
+</main>
+
+<script>
+  (function () {
+    function print(e) { if (e) { e.preventDefault(); } window.print(); }
+    var btn = document.getElementById('print-btn');
+    var link = document.getElementById('print-link');
+    if (btn)  { btn.addEventListener('click', print); }
+    if (link) { link.addEventListener('click', print); }
+  })();
+</script>
+</body>
+</html>
