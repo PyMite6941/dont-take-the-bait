@@ -312,7 +312,10 @@
         : '✗ Not quite — this one is ' + (q.answer === 'scam' ? 'a scam' : 'genuine');
       explain.textContent = q.why;
       scoreEl.textContent = 'SCORE ' + score;
-      nextBtn.focus();
+      // Move focus for keyboard and screen-reader users, but do not let the
+      // browser scroll to it — combined with scroll-behavior: smooth that
+      // lurches the page and pushes the answer buttons off the top.
+      nextBtn.focus({ preventScroll: true });
     }
 
     function advance() {
