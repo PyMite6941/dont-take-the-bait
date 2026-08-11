@@ -47,15 +47,26 @@
     var reveal = document.getElementById('hero-reveal');
     if (!body || !reveal) { return; }
 
-    function finish() {
+    // The div is formatted across lines in the HTML and the terminal renders
+    // with white-space: pre-wrap, so that indentation would show up as a blank
+    // first line. Clear it before writing anything.
+    body.textContent = '';
+
+    function finish(animate) {
       reveal.classList.remove('hidden');
-      if (!reduceMotion) { reveal.classList.add('reveal-anim'); }
+      if (animate) { reveal.classList.add('reveal-anim'); }
     }
 
-    // Respect reduced motion: show the finished screen, skip the performance.
-    if (reduceMotion) {
+    // Someone arriving on a deep link (#signs, #clicked) wants that section,
+    // not the intro. Play nothing: revealing the hero 7s late would shove the
+    // page down and dump them in the middle of nowhere.
+    var hash = window.location.hash;
+    var deepLink = hash.length > 1;
+
+    if (reduceMotion || deepLink) {
       TERMINAL_SCRIPT.forEach(function (line) { append(body, line); });
-      finish();
+      finish(false);
+      if (deepLink) { scrollToHash(hash); }
       return;
     }
 
@@ -67,13 +78,22 @@
     (function next() {
       if (i >= TERMINAL_SCRIPT.length) {
         cursor.remove();
-        finish();
+        finish(true);
         return;
       }
       var line = TERMINAL_SCRIPT[i++];
       body.insertBefore(buildSpan(line), cursor);
       setTimeout(next, line.pause);
     })();
+  }
+
+  // Re-run the browser's anchor jump once the hero is at its real height.
+  function scrollToHash(hash) {
+    requestAnimationFrame(function () {
+      var target;
+      try { target = document.querySelector(hash); } catch (e) { return; }
+      if (target) { target.scrollIntoView(); }
+    });
   }
 
   function buildSpan(line) {

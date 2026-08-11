@@ -6,7 +6,7 @@ A free, plain-English guide to spotting phishing emails, scam texts and fraud ph
 calls. Built for people who are **not** technically confident — the aesthetic is
 terminal-dark and technical, but every word on the page is jargon-free.
 
-**Live:** https://pymite6941.github.io/dont-take-the-bait/
+**Live:** https://pymite6941.is-a.dev/dont-take-the-bait/
 
 ---
 

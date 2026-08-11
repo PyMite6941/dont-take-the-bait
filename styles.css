@@ -104,7 +104,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-v
 
 .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1.25rem; }
 
-section { padding: 4.5rem 0; border-top: 1px solid var(--line); position: relative; }
+section {
+  padding: 4.5rem 0;
+  border-top: 1px solid var(--line);
+  position: relative;
+  scroll-margin-top: 5rem; /* clear the sticky topbar when jumped to */
+}
 
 .lede { font-size: 1.15em; color: var(--ink-soft); max-width: var(--measure); }
 
